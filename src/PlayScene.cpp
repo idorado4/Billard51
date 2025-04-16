@@ -2,7 +2,7 @@
 #include <iostream>
 
 PlayScene::PlayScene() : drawPockets(false), canPlayerHit(true), solidBallsLeft((NUM_BALLS - 2) / 2), stripeBallsLeft((NUM_BALLS - 2) / 2),
-canPlayerHitTwice(false), endGame(true), firstBallInPocket(true), pause(false), playerHit(false), winnerHitCount(0)
+canPlayerHitTwice(false), endGame(false), firstBallInPocket(true), pause(false), playerHit(false), winnerHitCount(0)
 {
 	sceneState = SceneState::UPDATE;
 
