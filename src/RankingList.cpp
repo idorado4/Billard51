@@ -78,7 +78,7 @@ void RankingList::InsertPlayer(std::string name, int score)
 	}
 
 	for (int i = 0; i < ranking.size(); i++) {
-		if (ranking[i] < temp) {
+		if (temp < ranking[i]) {
 			ranking.insert(ranking.begin() + i, temp);
 			break;
 		}
@@ -91,8 +91,6 @@ void RankingList::InsertPlayer(std::string name, int score)
 	if (ranking.size() > 5) {
 		ranking.pop_back();
 	}
-
-
 }
 
 void RankingList::UpdateFile()
