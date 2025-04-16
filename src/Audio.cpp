@@ -1,19 +1,21 @@
 #include "Audio.h"
+#include <stdexcept>
 
 Audio::Audio() {
 
 	const Uint8 mixFlags{ MIX_INIT_MP3 | MIX_INIT_OGG };
-	if (!(Mix_Init(mixFlags) & mixFlags)) throw "Error: SDL:MixerInit";
+	if (!(Mix_Init(mixFlags) & mixFlags))
+		throw std::runtime_error("Error: SDL_MixerInit - " + std::string(Mix_GetError()));
 
 	if (Mix_OpenAudio(MIX_DEFAULT_FREQUENCY, MIX_DEFAULT_FORMAT, 2, 1024) == -1) {
-		throw "Error: SDL:MixerInit";
+		throw std::runtime_error("Error: SDL_OpenAudio - " + std::string(Mix_GetError()));
 	}
 
-	menuMusic = { Mix_LoadMUS("../res/au/menu.mp3") };
-	if (!menuMusic) throw "Error loading audio";
+	menuMusic = { Mix_LoadMUS(MENU_MUSIC_PATH.c_str()) };
+	if (!menuMusic)  throw std::runtime_error("Error loading menu.mp3 - " + std::string(Mix_GetError()));
 
-	gameMusic = { Mix_LoadMUS("../res/au/game_theme.mp3") };
-	if (!gameMusic) throw "Error loading audio";
+	gameMusic = { Mix_LoadMUS(GAME_MUSIC_PATH.c_str()) };
+	if (!gameMusic)  throw std::runtime_error("Error loading game_theme.mp3 - " + std::string(Mix_GetError()));
 
 	Mix_VolumeMusic(MIX_MAX_VOLUME / 2);
 

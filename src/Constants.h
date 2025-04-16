@@ -116,4 +116,7 @@ const std::string GAMEOVER_FONT_PATH = "../res/ttf/game_over.ttf";
 
 const std::string RANKING_PATH = "../res/files/ranking.bin";
 
+const std::string MENU_MUSIC_PATH = "../res/au/menu.mp3";
+const std::string GAME_MUSIC_PATH = "../res/au/game_theme.mp3";
+
 
