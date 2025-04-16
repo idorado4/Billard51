@@ -111,7 +111,7 @@ void PlayScene::RackBalls()
 	//TODO Place balls correctly
 
 
-	float xPos = SCREEN_WIDTH / 2;
+	float xPos = SCREEN_WIDTH / 2 - TABLE_WSIZE / 4;
 	float yPos = SCREEN_HEIGHT / 2;
 	balls[0].SetPosition(xPos, yPos);
 	balls[0].SetInitPosition(xPos, yPos);
@@ -275,8 +275,6 @@ void PlayScene::CheckWinCondition(Inputs* input)
 		}
 	}
 
-	//std::cout << input->inputText << std::endl;
-
 }
 
 void PlayScene::Update(double dt, Inputs* input, Audio* audio)
@@ -432,11 +430,7 @@ void PlayScene::Draw()
 		renderer->PushImage(TXT_ID_INSERT_NAME, TXT_ID_INSERT_NAME);
 		renderer->PushImage(TXT_ID_INPUT_NAME, TXT_ID_INPUT_NAME);
 		renderer->PushImage(BT_ID_SAVE_RANKING, BT_ID_SAVE_RANKING);
-
-
 	}
-
-
 
 	renderer->Render();
 

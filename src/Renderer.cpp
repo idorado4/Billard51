@@ -13,11 +13,11 @@ Renderer::Renderer()
 
 	// --- WINDOW ---
 	m_window = SDL_CreateWindow("Billard 51", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
-	if (m_window == nullptr) throw "No es pot inicialitzar SDL_Window";
+	if (m_window == nullptr) throw "Cannot initialize SDL_Window";
 
 	// --- RENDERER ---
 	m_renderer = SDL_CreateRenderer(m_window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
-	if (m_renderer == nullptr) throw "No es pot inicialitzar SDL_Renderer";
+	if (m_renderer == nullptr) throw "Cannot initialize  SDL_Renderer";
 
 	//Initialize renderer color
 	SDL_SetRenderDrawColor(m_renderer, 0, 0, 0, 255);
@@ -27,7 +27,7 @@ Renderer::Renderer()
 	if (!(IMG_Init(imgFlags) & imgFlags)) throw "Error: SDL_imageinit";
 
 	//TTF --- INIT ---
-	if (TTF_Init() != 0) throw"No es pot inicialitzar SDL_ttf";
+	if (TTF_Init() != 0) throw"Cannot initialize SDL_ttf";
 }
 
 Renderer::~Renderer()
@@ -63,7 +63,7 @@ void Renderer::LoadTexture(const std::string& id, const std::string& path) {
 	//si la textura no existe, la creo. Si existe, la reemplazo
 
 	SDL_Texture* texture{ IMG_LoadTexture(m_renderer, path.c_str()) };
-	if (texture == nullptr) throw "No se puede crear la textura";
+	if (texture == nullptr) throw "Can not create texture";
 	if (m_textureData[id]) {
 		SDL_DestroyTexture(m_textureData[id]);
 	}

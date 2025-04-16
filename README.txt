@@ -1,3 +1,13 @@
+Billar51 - Ian Dorado
+# Para jugar, darle al botón de play. Es un turno por jugador, la asignación de bolas se hace 1 vez metida una bola.
+# Para tirar, hacer click en dirección contraria a la dirección deseada. Cualquier zona de la pantalla es válida. A más distancia con la bola, más fuerza.
+# Una vez metida la bola negra, se acaba la partida y gana el jugador que:
+#	- haya metido todas sus bolas + la negra
+#	- el  jugador contrario al que haya metido la negra antes tiempo
+# El ranking solo guarda los 5 mejores jugadores y ordenados de menos a más tiros.
+# Se puede controlar el volumen con los botones indicados o apagar del todo con el On-Off
+# Dentro del juego, al pulsar la tecla escape, se pausa el juego y aparecen 2 botones en los que 1 va al menú y el otro reinicia la partida. El volver al menú también significa que acaba la partida, no se mantiene.
+
 Martes 8 Abril - 2 Horas:
 	- Configuración del proyecto y SDL.
 
@@ -32,6 +42,12 @@ Martes/Miercoles 15/16 Abril - 30 Horas
 
 
 HORAS TOTALES: 46 HORAS
+
+TODO:
+- Me habría gustado mejorar la física de las bolas, no conseguia una transferencia de velocidades que no volviese locas al resto.
+- Faltaría un indicador de direción de tiro y regular de alguna manera la fuerza.
+- Haber puesto un palo (o indicador) para indicar desde donde se hace el tiro
+
 
 CREDITS:
 BALL SPRITES: https://pngimg.com/image/85013

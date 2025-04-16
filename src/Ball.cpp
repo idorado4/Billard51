@@ -47,7 +47,6 @@ void Ball::Draw()
 		visible = true;
 	}
 	else if (!visible && type == EBallType::BLACK) {
-		//DE MOMENTO HAS PERDIDO, HACER VICTORIA SI CONVIENE
 		stopped = true;
 		return;
 	}

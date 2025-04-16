@@ -5,7 +5,7 @@ class Pocket : public GameObject
 {
 
 private:
-	//EL CENTRO DEL OBJETO
+	//Center of the object
 	MyVec2f position;
 	float radius;
 
